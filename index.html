@@ -8,9 +8,20 @@
 </head>
 <body>
     <h1>Sound Generator</h1>
-<button id="sin">sin波</button>
-<button id="square">矩形波</button>
-<button id="triangle">三角波</button>
-<button id="sawtooth">ノコギリ波</button>
+    <div>
+        <button id="sin">sin波</button>
+        <button id="square">矩形波</button>
+        <button id="triangle">三角波</button>
+        <button id="sawtooth">ノコギリ波</button>
+    </div>
+    <div>
+        周波数：<input type="number" name="freq" id="freq" min="200" max="2000" value="440" step="10">
+        鳴っている時間：<select name="foo" id="bar">
+        <option value="1">1秒</option>
+        <option value="3">3秒</option>
+        <option value="5">5秒</option>
+        <option value="10">10秒</option>
+    </select>
+    </div>
 </body>
 </html>

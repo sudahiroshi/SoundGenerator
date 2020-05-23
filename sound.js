@@ -1,9 +1,9 @@
 window.addEventListener('load', () => {
     let sound = new Sound();
-    document.querySelector('#sin').addEventListener('click', () => sound.play( 440, "sine", 0.8 ) );
-    document.querySelector('#square').addEventListener('click', () => sound.play( 440, "square", 0.1 ) );
-    document.querySelector('#triangle').addEventListener('click', () => sound.play( 440, "triangle", 0.5 ) );
-    document.querySelector('#sawtooth').addEventListener('click', () => sound.play( 440, "sawtooth", 0.2 ) );
+    document.querySelector('#sin').addEventListener('click', () => sound.play( "sine", 0.8, getParam() ) );
+    document.querySelector('#square').addEventListener('click', () => sound.play( "square", 0.1, getParam() ) );
+    document.querySelector('#triangle').addEventListener('click', () => sound.play( "triangle", 0.5, getParam() ) );
+    document.querySelector('#sawtooth').addEventListener('click', () => sound.play( "sawtooth", 0.2, getParam() ) );
 });
 
 class Sound {
@@ -12,7 +12,9 @@ class Sound {
         this.ctx = new AudioContext();
     }
 
-    play( frequency, type, gain ) {
+    play( type, gain, param ) {
+        let frequency = param.freq || 440;
+        let duration = param.duration || 1;
         let oscNode = this.ctx.createOscillator();
         let gainNode = this.ctx.createGain();
 
@@ -22,6 +24,13 @@ class Sound {
         oscNode.frequency.value = frequency;
         gainNode.gain.value = gain;
         oscNode.start();
-        setTimeout( () => { oscNode.stop() }, 1000 );
+        setTimeout( () => { oscNode.stop() }, duration * 1000 );
     }
+}
+
+function getParam() {
+    let freq = document.querySelector('#freq').rawValue;
+    let duration = document.querySelector('#bar').value;
+    console.log( freq );
+    return { freq: freq, duration: duration };
 }
