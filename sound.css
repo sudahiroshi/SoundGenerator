@@ -1,0 +1,27 @@
+.grA {
+    width: 8em;
+    height: 3em;
+}
+
+.grB {
+    width: 8em;
+    height: 3em;
+}
+
+.grC {
+    width: 8em;
+    height: 4em;
+    display: inline-block;
+}
+
+.inputbox {
+    height: 2em;
+}
+
+div {
+    margin: 1em;
+}
+
+button {
+    margin-right: 1em;
+}

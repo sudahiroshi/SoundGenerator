@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./sound.js"></script>
+    <link rel="stylesheet" href="./sound.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Sound Generator</h1>
     <div>
-        <button id="sin">sin波</button>
-        <button id="square">矩形波</button>
-        <button id="triangle">三角波</button>
-        <button id="sawtooth">ノコギリ波</button>
+        基本的な音<br>
+        <button id="sin" class="grA">sin波</button>
+        <button id="square" class="grA">矩形波</button>
+        <button id="triangle" class="grA">三角波</button>
+        <button id="sawtooth" class="grA">ノコギリ波</button>
     </div>
     <div>
-        周波数：<input type="number" name="freq" id="freq" min="200" max="2000" value="440" step="10">
-        鳴っている時間：<select name="foo" id="bar">
-        <option value="1">1秒</option>
-        <option value="3">3秒</option>
-        <option value="5">5秒</option>
-        <option value="10">10秒</option>
+        特徴から合成した楽器音<br>
+        <button id="violin" class="grB">バイオリン</button>
+        <button id="clarinet" class="grB">クラリネット</button>
+        <button id="piano" class="grB">ピアノ</button>
+        <button id="flute" class="grB">フルート</button>
+    </div>
+    <div>
+        <div class="grC">
+            周波数<br>
+            <input type="number" name="freq" id="freq" min="200" max="2000" value="440" step="10" class="inputbox">Hz
+        </div>
+        <div class="grC">
+            鳴っている時間<br>
+            <select name="foo" id="bar" class="inputbox">
+            <option value="1000">1秒</option>
+            <option value="3000">3秒</option>
+            <option value="5000">5秒</option>
+            <option value="10000">10秒</option>
+            </select>
+            </div>
     </select>
     </div>
 </body>
