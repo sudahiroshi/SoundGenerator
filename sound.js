@@ -141,7 +141,7 @@ class Sound {
 }
 
 function getParam() {
-    let freq = document.querySelector('#freq').rawValue;
+    let freq = document.querySelector('#freq').value;
     let duration = document.querySelector('#bar').value;
     console.log( freq );
     return { freq: Number(freq), duration: Number(duration) };
